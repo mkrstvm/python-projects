@@ -1,0 +1,3 @@
+([('PasswordManager',
+   '/Users/_mkrs_/MyWorks/repositories/PythonProjects/Solution+-+password-manager-improved-end/dist/PasswordManager',
+   'EXECUTABLE')],)
