@@ -59,9 +59,7 @@ class Base(DeclarativeBase):
     pass
 
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
-app.config[
-    'SQLALCHEMY_DATABASE_URI'] = 'postgresql://my_blog_roa5_user:4pmi1riYcxlVndfPNiseotqiRxrwRuBE@dpg-cmpn4hect0pc73f3okdg-a/my_blog_roa5'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
 
