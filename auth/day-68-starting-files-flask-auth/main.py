@@ -14,9 +14,7 @@ class Base(DeclarativeBase):
     pass
 
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
-app.config[
-    'SQLALCHEMY_DATABASE_URI'] = 'postgresql://my_blog_roa5_user:4pmi1riYcxlVndfPNiseotqiRxrwRuBE@dpg-cmpn4hect0pc73f3okdg-a/my_blog_roa5'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
 
@@ -29,7 +27,7 @@ class User(db.Model):
     name: Mapped[str] = mapped_column(String(1000))
 
     def to_dict(self):
-        return {column.name: getattr(self, column.name) for column in self.__table__.columns}
+        return {column.name:getattr(self, column.name) for column in self.__table__.columns}
 
 
 with app.app_context():
@@ -55,7 +53,7 @@ def register():
     return render_template("register.html")
 
 
-@app.route('/login', methods=["GET", "POST"])
+@app.route('/login', methods=["GET","POST"])
 def login():
     if request.method == "GET":
         return render_template("login.html")
